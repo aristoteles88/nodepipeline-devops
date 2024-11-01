@@ -1,5 +1,5 @@
 FROM node:12
-RUN apt-get update && apt-get install git -y && apt-get install imagemagick -y;
+RUN apt update && apt install git -y && apt install imagemagick -y;
 
 WORKDIR /ecs-app
 
