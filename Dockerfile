@@ -1,5 +1,5 @@
 FROM node:12
-RUN yum update && yum install git -y && yum install imagemagick -y;
+RUN apt-get update && apt-get install git -y && apt-get install imagemagick -y;
 
 WORKDIR /ecs-app
 
