@@ -1,15 +1,15 @@
 version: 0.2
 
-env:
-  secrets-manager:
-    DOCKERHUB_PASS: "/dockerhub/credentials:password"
-    DOCKERHUB_USERNAME: "/dockerhub/credentials:username"
+# env:
+#   secrets-manager:
+#     DOCKERHUB_PASS: "/dockerhub/credentials:password"
+#     DOCKERHUB_USERNAME: "/dockerhub/credentials:username"
 
 phases:
   pre_build:
     commands:
-      - echo Logging in to DockerHub...
-      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
+      # - echo Logging in to DockerHub...
+      # - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
       - echo Logging in to Amazon ECR...
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 196767269124.dkr.ecr.us-east-1.amazonaws.com
